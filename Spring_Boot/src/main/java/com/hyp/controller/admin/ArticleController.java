@@ -63,7 +63,7 @@ public class ArticleController extends BaseController {
             @RequestParam(name = "page", required = false, defaultValue = "1")
             int page,
             @ApiParam(name = "limit", value = "每页数量", required = false)
-            @RequestParam(name = "limit", required = false, defaultValue = "15")
+            @RequestParam(name = "limit", required = false, defaultValue = "10")
             int limit
     ){
         PageInfo<ContentDomain> articles = contentService.getArticlesByCond(new ContentCond(), page, limit);

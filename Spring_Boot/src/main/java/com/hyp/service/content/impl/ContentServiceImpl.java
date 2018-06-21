@@ -75,10 +75,11 @@ public class ContentServiceImpl implements ContentService {
         //标签和分类
         String tags = contentDomain.getTags();
         String categories = contentDomain.getCategories();
+        //从session中获取当前登录用户的id
         UserDomain userInfo = (UserDomain) request.getSession().getAttribute("login_user");
         /*Integer authorId = (Integer) request.getSession().getAttribute("userInfo");*/
         Integer authorId = userInfo.getUid();
-        System.out.println("*************************" + authorId);
+        /*System.out.println("*************************" + authorId);*/
         contentDomain.setAuthorId(authorId);
         contentDao.addArticle(contentDomain);
 

@@ -147,7 +147,7 @@ public class HomeController extends BaseController{
         if (chits == null) {
             chits = 0;
         }
-        hits = null == hits ? 1 : hits + 1;
+        hits = null == hits ? 1 : hits + (1%2);
         if (hits >= WebConst.HIT_EXCEED) {
             ContentDomain temp = new ContentDomain();
             temp.setCid(cid);
